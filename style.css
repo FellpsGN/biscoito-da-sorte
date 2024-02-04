@@ -1,0 +1,139 @@
+:root {
+    font-size: 62.5%;
+
+    --color-blue: #34355B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(45deg, #190361, #bb00ff);
+    font-size: 1.6rem;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: gradient 10s ease infinite;
+    background-size: 200% 200%;
+}
+
+.cookie, .cookie-breaked {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    padding: 6.4rem 6.4rem;
+    border-radius: .5rem;
+    background-color: #FFF;
+
+    /* deslocamento na horizontal - deslocamento na vertical - borrão (blur) - cor */
+    box-shadow: 0rem 1rem 6rem .5rem black;
+}
+
+.hide {
+    display: none;
+}
+
+.cookie h1, .cookie-breaked h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 2.4rem;
+    color: var(--color-blue);
+}
+
+.cookie p, .cookie-breaked p {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: normal;
+    font-size: 1.5rem;
+    color: var(--color-blue);
+}
+
+.cookie-breaked button {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    
+    padding: 1.6rem;
+    color: #FFF;
+    
+    background-color: #FF9500;
+    border: none;
+    border-radius: .4rem;
+}
+
+.cookie-breaked p {
+    font-family: 'Dancing Script', sans-serif;
+    font-weight: normal;
+    font-size: 2.4rem;
+    color: #000;
+    background-color: #E4EDF1;
+
+    padding: 1rem;
+}
+
+.cookie-breaked button:hover {
+    background-color: #eb8901;
+}
+
+.vibrate:hover {
+    animation: shake 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+.appear {
+    animation: appear 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes shake {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    10%, 30%, 50%, 70% {
+        transform: translateY(-.8rem);
+    }
+
+    20%, 40%, 60% {
+        transform: translateY(.8rem);
+    }
+    80% {
+        transform: translateY(.64rem);
+    }
+    90% {
+        transform: translateY(-.64rem);
+    }
+}
+
+@keyframes appear {
+    0% {
+        transform: translateY(12rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
